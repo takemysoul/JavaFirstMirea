@@ -11,6 +11,6 @@ public class Triangle extends Shape
     public void Print(Graphics g)
     {
         g.setColor(getColor());
-        g.fillPolygon(new int[] {getX(), (getX() + 10) + (int) (Math.random() * (getX() + 50)), (getX() + 10) + (int) (Math.random() * (getX() + 50))}, new int[] {getY(), (getY() + 10) + (int) (Math.random() * (getY() + 50)), (getY() + 10) + (int) (Math.random() * (getY() + 50))}, 3);
+        g.fillPolygon(new int[] {getX(), (getX() - 50) + (int) (Math.random() * (getX() + 50)), (getX() - 50) + (int) (Math.random() * (getX() + 50))}, new int[] {getY(), (getY() - 50) + (int) (Math.random() * (getY() + 50)), (getY() - 50) + (int) (Math.random() * (getY() + 50))}, 3);
     }
 }

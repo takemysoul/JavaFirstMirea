@@ -23,15 +23,15 @@ public class Painting extends JFrame
             switch (1 + (int) (Math.random() * 3))
             {
                 case (1):
-                    rec = new Rectangle(10 + (int) (Math.random() * 1100), 50 + (int) (Math.random() * 700), new Color(red, green, blue));
+                    rec = new Rectangle(100 + (int) (Math.random() * 1100), 100 + (int) (Math.random() * 700), new Color(red, green, blue));
                     rec.Print(g);
                     break;
                 case (2):
-                    cir = new Circle(10 + (int) (Math.random() * 1100), 50 + (int) (Math.random() * 700), new Color(red, green, blue));
+                    cir = new Circle(100 + (int) (Math.random() * 1100), 100 + (int) (Math.random() * 700), new Color(red, green, blue));
                     cir.Print(g);
                     break;
                 case(3):
-                    tri = new Triangle(10 + (int) (Math.random() * 1100), 50 + (int) (Math.random() * 700), new Color(red, green, blue));
+                    tri = new Triangle(100 + (int) (Math.random() * 1100), 100 + (int) (Math.random() * 700), new Color(red, green, blue));
                     tri.Print(g);
                     break;
             }
