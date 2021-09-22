@@ -1,7 +1,5 @@
 package ru.mirea.task5.opt1;
 
-import ru.mirea.task4.opt1.Author;
-
 public class TestDish
 {
     public static void main(String[] args)
