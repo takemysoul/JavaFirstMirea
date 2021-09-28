@@ -6,11 +6,13 @@ public class Circle extends Shape
 
     public Circle()
     {
+        super();
         radius = 0;
     }
 
     public Circle(double radius)
     {
+        super();
         this.radius = radius;
     }
 
