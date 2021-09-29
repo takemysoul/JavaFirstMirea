@@ -9,7 +9,7 @@ public class NedoGif extends JFrame
 
     public NedoGif()
     {
-        super("Lab5_2");
+        super("Lab5_3");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setLocationRelativeTo(null);
