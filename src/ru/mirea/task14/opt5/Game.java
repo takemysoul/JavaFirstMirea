@@ -48,7 +48,7 @@ public class Game extends JFrame
         label_2.setAlignmentX(CENTER_ALIGNMENT);
         panel.add(label_2);
 
-        JButton button = new JButton("Показать верхние карты обеих колод");
+        JButton button = new JButton(" Показать верхние карты обеих колод ");
         button.setFont(new Font("Koh Santepheap", Font.PLAIN, 16));
         button.setAlignmentX(CENTER_ALIGNMENT);
         button.addActionListener(new ActionListener()
@@ -96,6 +96,54 @@ public class Game extends JFrame
         });
         button.setAlignmentX(CENTER_ALIGNMENT);
         panel.add(button);
+
+        JButton button_2 = new JButton("Посмотреть результат, пропустив шаги");
+        button_2.setFont(new Font("Koh Santepheap", Font.PLAIN, 16));
+        button_2.setAlignmentX(CENTER_ALIGNMENT);
+        button_2.addActionListener(new ActionListener()
+        {
+            public void actionPerformed(ActionEvent e)
+            {
+                while ( !(deck_1.isEmpty()) && !(deck_2.isEmpty()) )
+                {
+                    if (counter >= 106)
+                    {
+                        JOptionPane.showMessageDialog(Game.this, "botva - слишком много итераций");
+                        break;
+                    }
+                    else
+                    {
+                        if ( ( ( deck_1.get(0) < deck_2.get(0) ) ||
+                                ( (deck_1.get(0) == 9) && (deck_2.get(0) == 0) ) ) &&
+                                ( (deck_1.get(0) != 0) || (deck_2.get(0) != 9) )   )
+                        {
+                            deck_2.push(deck_1.get(0));
+                            deck_2.push(deck_2.get(0));
+                            deck_2.removeElementAt(0);
+                            deck_1.removeElementAt(0);
+                        }
+                        else
+                        {
+                            deck_1.push(deck_1.get(0));
+                            deck_1.push(deck_2.get(0));
+                            deck_2.removeElementAt(0);
+                            deck_1.removeElementAt(0);
+                        }
+
+                        counter++;
+                    }
+                }
+                if( counter < 106 )
+                {
+                    if (deck_1.isEmpty())
+                        JOptionPane.showMessageDialog(Game.this, "Вы выиграли! Прошло " + counter + " ходов.");
+                    else
+                        JOptionPane.showMessageDialog(Game.this, "Вы проиграли! Прошло " + counter + " ходов.");
+                }
+            }
+        });
+        button_2.setAlignmentX(CENTER_ALIGNMENT);
+        panel.add(button_2);
 
         label_3.setFont(new Font("Koh Santepheap", Font.PLAIN, 16));
         label_3.setForeground(Color.WHITE);
