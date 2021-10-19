@@ -1,13 +1,16 @@
-package ru.mirea.task15.opt1;
-import java.io.*;
+package ru.mirea.task15.opt3;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.Scanner;
 
-public class FIleWork
+public class ChangeFile
 {
     public static void main(String[] args) throws IOException
     {
         File file = new File("X:\\МИРЭА\\Java_pr\\JavaFirstMirea\\src\\ru\\mirea\\task15\\testfile.txt");
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        FileOutputStream fileOutputStream = new FileOutputStream(file, false);
 
         String input;
         Scanner scanner = new Scanner(System.in);
