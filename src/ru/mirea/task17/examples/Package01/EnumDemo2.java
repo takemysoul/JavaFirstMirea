@@ -1,5 +1,4 @@
-package ru.mirea.task17.examples.package01;
-
+package ru.mirea.task17.examples.Package01;
 // В программе демонстрируется применение методов values() и valueOf()
 class EnumDemo2 {
     public static void main(String[] args) {
