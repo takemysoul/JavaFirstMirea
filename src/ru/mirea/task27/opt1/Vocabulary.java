@@ -1,5 +1,6 @@
 package ru.mirea.task27.opt1;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class Vocabulary
 {
@@ -13,27 +14,26 @@ public class Vocabulary
         DATA_BASE.put("Архипова", "Виктория");
         DATA_BASE.put("Наумов", "Роберт");
         DATA_BASE.put("Попов", "Илья");
-        DATA_BASE.put("Макарова", "Полина");
+        DATA_BASE.put("Макаров", "Роберт");
         DATA_BASE.put("Овсянникова", "Ангелина");
         DATA_BASE.put("Данилов", "Глеб");
         DATA_BASE.put("Корчагина", "Алиса");
 
-        System.out.println();
-        System.out.println(DATA_BASE);
+        System.out.printf("До: %s%n", DATA_BASE);
 
-        Map<String, String> copy = DATA_BASE;
-        Collection<String> list1 = copy.values();
-
-        Collection<String> list2 = DATA_BASE.values();
-        for(Iterator<String> itr = list2.iterator(); itr.hasNext();)
+        HashMap<String, Integer> names = new HashMap<>();
+        for (String surname : DATA_BASE.keySet())
         {
-            if(Collections.frequency(list1, itr.next()) > 1)
-            {
-                itr.remove();
-            }
+            String name = DATA_BASE.get(surname);
+            names.put(name, names.getOrDefault(name, 0) + 1);
         }
+        Set<String> surnames = new HashSet<String>();
+        for (String surname : DATA_BASE.keySet())
+            if (names.get(DATA_BASE.get(surname)) > 1)
+                surnames.add(surname);
+        for (String surname : surnames)
+            DATA_BASE.remove(surname);
 
-        System.out.println();
-        System.out.println(DATA_BASE);
+        System.out.printf("После: %s%n", DATA_BASE);
     }
 }
